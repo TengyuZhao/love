@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView img_cover;
     private TextView tv_note;
-    private ImageView img_url;
+    private ImageView img;
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler ( ) {
         @Override
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                         String note = o1.getString ( "note" );
                         tv_note.setText ( note );
                         String imgurl = o1.getString ( "imgurl" );
-                        Glide.with ( MainActivity.this ).load ( imgurl ).into ( img_url );
+                        Glide.with ( MainActivity.this ).load ( imgurl ).into ( img );
                     }
 
                 } catch (JSONException e) {
@@ -115,6 +115,6 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         img_cover = (ImageView) findViewById ( R.id.img_cover );
         tv_note = (TextView) findViewById ( R.id.tv_note );
-        img_url = (ImageView) findViewById ( R.id.img_url );
+        img = (ImageView) findViewById ( R.id.img_url );
     }
 }
